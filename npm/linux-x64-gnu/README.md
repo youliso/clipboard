@@ -1,3 +1,3 @@
-# `clipboard-linux-x64-gnu`
+# `@youliso/clipboard-linux-x64-gnu`
 
-This is the **x86_64-unknown-linux-gnu** binary for `clipboard`
+This is the **x86_64-unknown-linux-gnu** binary for `@youliso/clipboard`

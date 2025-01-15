@@ -1,3 +1,3 @@
-# `clipboard-win32-ia32-msvc`
+# `@youliso/clipboard-win32-ia32-msvc`
 
-This is the **i686-pc-windows-msvc** binary for `clipboard`
+This is the **i686-pc-windows-msvc** binary for `@youliso/clipboard`

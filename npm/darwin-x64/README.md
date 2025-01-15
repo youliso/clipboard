@@ -1,3 +1,3 @@
-# `clipboard-darwin-x64`
+# `@youliso/clipboard-darwin-x64`
 
-This is the **x86_64-apple-darwin** binary for `clipboard`
+This is the **x86_64-apple-darwin** binary for `@youliso/clipboard`
