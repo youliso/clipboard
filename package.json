@@ -43,11 +43,11 @@
     "version": "napi version"
   },
   "optionalDependencies": {
-    "@youliso/clipboard-win32-x64-msvc": "0.0.4",
-    "@youliso/clipboard-darwin-x64": "0.0.4",
-    "@youliso/clipboard-linux-x64-gnu": "0.0.4",
-    "@youliso/clipboard-darwin-arm64": "0.0.4",
-    "@youliso/clipboard-linux-arm64-gnu": "0.0.4",
-    "@youliso/clipboard-win32-ia32-msvc": "0.0.4"
+    "@youliso/clipboard-win32-x64-msvc": "0.0.5",
+    "@youliso/clipboard-darwin-x64": "0.0.5",
+    "@youliso/clipboard-linux-x64-gnu": "0.0.5",
+    "@youliso/clipboard-darwin-arm64": "0.0.5",
+    "@youliso/clipboard-linux-arm64-gnu": "0.0.5",
+    "@youliso/clipboard-win32-ia32-msvc": "0.0.5"
   }
 }
