@@ -1,6 +1,6 @@
 {
   "name": "@youliso/clipboard-darwin-arm64",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "os": [
     "darwin"
   ],
