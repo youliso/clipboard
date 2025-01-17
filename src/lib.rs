@@ -4,6 +4,7 @@
 extern crate napi_derive;
 
 use clipboard_rs::{Clipboard, ClipboardContext, ContentFormat};
+use napi::bindgen_prelude::Buffer;
 
 #[napi]
 pub fn get_files() -> Vec<String> {
@@ -41,6 +42,41 @@ pub fn set_files(files: Vec<String>) -> bool {
       Ok(_) => true,
       Err(err) => {
         eprintln!("Failed to set files to clipboard: {}", err);
+        false
+      }
+    },
+    Err(err) => {
+      eprintln!("Failed to create clipboard context: {}", err);
+      false
+    }
+  }
+}
+
+#[napi]
+pub fn get_buffer(format: String) -> Option<Buffer> {
+  match ClipboardContext::new() {
+    Ok(ctx) => match ctx.get_buffer(&format) {
+      Ok(buf) => Some(Buffer::from(buf)),
+      Err(err) => {
+        eprintln!("Failed to get buffer from clipboard: {}", err);
+        None
+      }
+    },
+    Err(err) => {
+      eprintln!("Failed to create clipboard context: {}", err);
+      None
+    }
+  }
+}
+
+#[napi]
+pub fn set_buffer(format: String, buf: Buffer) -> bool {
+  let value_data: Vec<u8> = buf.into();
+  match ClipboardContext::new() {
+    Ok(ctx) => match ctx.set_buffer(&format, value_data) {
+      Ok(_) => true,
+      Err(err) => {
+        eprintln!("Failed to set buffer from clipboard: {}", err);
         false
       }
     },
