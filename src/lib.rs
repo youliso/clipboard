@@ -50,3 +50,71 @@ pub fn set_files(files: Vec<String>) -> bool {
     }
   }
 }
+
+#[napi]
+pub fn get_html() -> Option<String> {
+  match ClipboardContext::new() {
+    Ok(ctx) => match ctx.get_html() {
+      Ok(text) => Some(text),
+      Err(err) => {
+        eprintln!("Failed to get html from clipboard: {}", err);
+        None
+      }
+    },
+    Err(err) => {
+      eprintln!("Failed to create clipboard context: {}", err);
+      None
+    }
+  }
+}
+
+#[napi]
+pub fn set_html(html: String) -> bool {
+  match ClipboardContext::new() {
+    Ok(ctx) => match ctx.set_html(html) {
+      Ok(_) => true,
+      Err(err) => {
+        eprintln!("Failed to set html from clipboard: {}", err);
+        false
+      }
+    },
+    Err(err) => {
+      eprintln!("Failed to create clipboard context: {}", err);
+      false
+    }
+  }
+}
+
+#[napi]
+pub fn get_text() -> Option<String> {
+  match ClipboardContext::new() {
+    Ok(ctx) => match ctx.get_text() {
+      Ok(text) => Some(text),
+      Err(err) => {
+        eprintln!("Failed to get text from clipboard: {}", err);
+        None
+      }
+    },
+    Err(err) => {
+      eprintln!("Failed to create clipboard context: {}", err);
+      None
+    }
+  }
+}
+
+#[napi]
+pub fn set_text(text: String) -> bool {
+  match ClipboardContext::new() {
+    Ok(ctx) => match ctx.set_text(text) {
+      Ok(_) => true,
+      Err(err) => {
+        eprintln!("Failed to set text from clipboard: {}", err);
+        false
+      }
+    },
+    Err(err) => {
+      eprintln!("Failed to create clipboard context: {}", err);
+      false
+    }
+  }
+}

@@ -5,3 +5,7 @@
 
 export declare function getFiles(): Array<string>
 export declare function setFiles(files: Array<string>): boolean
+export declare function getHtml(): string | null
+export declare function setHtml(html: string): boolean
+export declare function getText(): string | null
+export declare function setText(text: string): boolean

@@ -310,7 +310,11 @@ if (!nativeBinding) {
   throw new Error(`Failed to load native binding`)
 }
 
-const { getFiles, setFiles } = nativeBinding
+const { getFiles, setFiles, getHtml, setHtml, getText, setText } = nativeBinding
 
 module.exports.getFiles = getFiles
 module.exports.setFiles = setFiles
+module.exports.getHtml = getHtml
+module.exports.setHtml = setHtml
+module.exports.getText = getText
+module.exports.setText = setText
